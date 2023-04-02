@@ -1,13 +1,16 @@
-import Head from 'next/head';
-import { Inter } from 'next/font/google';
-
-// const inter = Inter({ subsets: ['latin'] });
+import Layout from '@/components/layout';
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <>
-      <Head></Head>
-      <h1>Hola Mundo en Next</h1>
+      <Layout
+        title={'Inicio'}
+        description={'Blog de música, venta de guitarras y más'}
+      >
+        <h1>Hola Mundo en Next</h1>
+        <Link href="/nosotros">Nosotros</Link>
+      </Layout>
     </>
   );
 }
