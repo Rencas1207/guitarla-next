@@ -27,7 +27,6 @@ export default function Producto({ guitar }) {
 export async function getStaticPaths() {
   const respuesta = await fetch(`${process.env.API_URL}/guitarras`);
   const { data } = await respuesta.json();
-  console.log(data);
   const paths = data.map((guitarra) => ({
     params: {
       url: guitarra.attributes.url,
@@ -40,7 +39,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { url } }) {
-  console.log(url);
   const respuesta = await fetch(
     `${process.env.API_URL}/guitarras?filters[url]=${url}&populate=image`
   );
