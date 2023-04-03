@@ -4,7 +4,6 @@ import Guitar from '@/components/guitar';
 import styles from '../styles/grid.module.css';
 
 export default function Tienda({ guitars }) {
-  console.log(guitars);
   return (
     <Layout
       title="Tienda virtual"
