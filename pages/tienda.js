@@ -12,14 +12,9 @@ export default function Tienda({ guitars }) {
       <main className="contenedor">
         <h2 className="heading">Nuestra colección</h2>
         <div className={styles.grid}>
-          {
-            guitars.map(guitar => (
-              <Guitar
-                key={guitar.id}
-                guitar={guitar.attributes}
-              />
-            ))
-          }
+          {guitars?.map((guitar) => (
+            <Guitar key={guitar.id} guitar={guitar.attributes} />
+          ))}
         </div>
       </main>
     </Layout>
@@ -46,4 +41,3 @@ export async function getServerSideProps() {
     props: { guitars },
   };
 }
-
